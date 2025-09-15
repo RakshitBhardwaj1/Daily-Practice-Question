@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Solution {
+    public String[] spellchecker(String[] wordlist, String[] queries) {
+        Set<String> exact = new HashSet<>(Arrays.asList(wordlist));
+        Map<String, String> lowerMap = new HashMap<>();
+        Map<String, String> vowelMap = new HashMap<>();
+        
+        for (String w : wordlist) {
+            String low = w.toLowerCase();
+            lowerMap.putIfAbsent(low, w);
+            vowelMap.putIfAbsent(devowel(low), w);
+        }
+        
+        String[] ans = new String[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            String q = queries[i];
+            if (exact.contains(q)) ans[i] = q;
+            else if (lowerMap.containsKey(q.toLowerCase())) ans[i] = lowerMap.get(q.toLowerCase());
+            else if (vowelMap.containsKey(devowel(q.toLowerCase()))) ans[i] = vowelMap.get(devowel(q.toLowerCase()));
+            else ans[i] = "";
+        }
+        return ans;
+    }
+
+    private String devowel(String s) {
+        return s.replaceAll("[aeiou]", "*");
+    }
+}
