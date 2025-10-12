@@ -1,4 +1,4 @@
-// Last updated: 10/12/2025, 4:22:56 PM
+// Last updated: 10/12/2025, 4:24:12 PM
 class Solution {
     public int smallestNumber(int n) {
         // x is a power of two, x - 1 is of form 111...1 in binary
