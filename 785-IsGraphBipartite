@@ -1,4 +1,4 @@
-// Last updated: 10/16/2025, 11:45:13 AM
+// Last updated: 10/16/2025, 11:58:33 AM
 class Solution{
 		public boolean isBipartite(int[][] graph) {
 			Queue<BipartitePair> q=new LinkedList<>();
