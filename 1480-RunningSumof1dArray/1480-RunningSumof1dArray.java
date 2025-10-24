@@ -1,4 +1,4 @@
-// Last updated: 10/24/2025, 10:36:05 AM
+// Last updated: 10/24/2025, 10:46:25 AM
 class Solution {
     public int[] runningSum(int[] nums) {
         int[] out=new int[nums.length];
