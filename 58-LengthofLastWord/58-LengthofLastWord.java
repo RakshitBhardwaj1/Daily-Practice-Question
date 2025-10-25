@@ -1,4 +1,4 @@
-// Last updated: 10/25/2025, 9:58:12 AM
+// Last updated: 10/25/2025, 10:02:21 AM
 class Solution {
     public int lengthOfLastWord(String s) {
         int end = s.length() - 1;
