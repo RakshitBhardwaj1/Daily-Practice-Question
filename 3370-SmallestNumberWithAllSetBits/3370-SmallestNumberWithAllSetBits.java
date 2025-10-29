@@ -1,7 +1,6 @@
-// Last updated: 10/12/2025, 4:24:12 PM
+// Last updated: 10/29/2025, 7:29:08 AM
 class Solution {
     public int smallestNumber(int n) {
-        // x is a power of two, x - 1 is of form 111...1 in binary
         int x = 1;
         while (x - 1 < n) {
             x <<= 1;
