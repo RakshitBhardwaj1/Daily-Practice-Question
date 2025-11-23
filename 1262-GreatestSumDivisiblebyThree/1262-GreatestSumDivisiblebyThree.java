@@ -1,4 +1,4 @@
-// Last updated: 11/23/2025, 11:26:52 AM
+// Last updated: 11/23/2025, 2:03:45 PM
 class Solution {
     public int maxSumDivThree(int[] nums) {
         int[] dp = new int[]{0, Integer.MIN_VALUE, Integer.MIN_VALUE};
@@ -13,7 +13,6 @@ class Solution {
                 }
             }
         }
-
         return dp[0];
     }
 }
