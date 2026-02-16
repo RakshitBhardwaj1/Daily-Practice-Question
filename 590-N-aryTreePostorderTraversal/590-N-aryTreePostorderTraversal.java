@@ -1,4 +1,4 @@
-// Last updated: 2/14/2026, 4:30:48 PM
+// Last updated: 2/16/2026, 8:00:10 AM
 1/*
 2// Definition for a Node.
 3class Node {
@@ -24,7 +24,7 @@
 23        Post(root,ll);
 24        return ll;
 25    }
-26    public void Post(Node root,ArrayList<Integer> ll){
+26    public static void Post(Node root,ArrayList<Integer> ll){
 27        if(root==null){
 28            return;
 29        }
