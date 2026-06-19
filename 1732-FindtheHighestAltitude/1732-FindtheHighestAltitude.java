@@ -1,16 +1,25 @@
-// Last updated: 6/19/2026, 8:28:17 PM
+// Last updated: 6/19/2026, 8:52:02 PM
 1class Solution {
-2    public int largestAltitude(int[] gain) {
-3        int n=gain.length;
-4        int max=Integer.MIN_VALUE;
-5        int diff=0;
-6        for(int i=0;i<n;i++){
-7            diff=diff+gain[i];
-8            max=Math.max(max,diff);
-9        }
-10        if(max<0){
-11            return 0;
-12        }
-13        return max;
-14    }
-15}
+2    public int[] pivotArray(int[] nums, int pivot) {
+3        int n=nums.length;
+4        int k=0;
+5        int[] arr=new int[n];
+6        for(int num:nums){
+7            if(num<pivot){
+8                arr[k++]=num;
+9            }
+10            
+11        }
+12        for(int num:nums){
+13            if(num==pivot){
+14                arr[k++]=num;
+15            }
+16        }
+17        for(int num:nums){
+18            if(num>pivot){
+19                arr[k++]=num;
+20            }
+21        }
+22        return arr;
+23    }
+24}
