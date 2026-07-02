@@ -1,26 +1,21 @@
-// Last updated: 7/2/2026, 5:05:08 PM
+// Last updated: 7/2/2026, 5:30:41 PM
 1class Solution {
-2    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-3        int k=nums1.length;
-4        int m=nums2.length;
-5        int[] arr=new int[k];
-6        for(int l=0;l<k;l++){
-7            int idx=-1;
-8            for(int i=0;i<m;i++){
-9                if(nums2[i]==nums1[l]){
-10                    idx=i;
-11                    break;
-12                }
-13            }
-14            int ans=-1;
-15            for(int i=idx+1;i<m;i++){
-16                if(nums2[i]>nums1[l]){
-17                    ans=nums2[i];
-18                    break;
-19                }
-20            }
-21            arr[l]=ans;
-22        }
-23        return arr;
-24    }
-25}
+2    public int[] nextGreaterElements(int[] nums) {
+3        int n=nums.length;
+4        ArrayList<Integer> ll=new ArrayList<>();
+5        int NGE[]=new int[n];
+6        Stack<Integer> st=new Stack();
+7        for(int i=2*n-1;i>=0;i--){
+8            while(!st.isEmpty()&&st.peek()<=nums[i%n]){
+9                st.pop();
+10
+11            }
+12            if(i<n){
+13                NGE[i]=st.isEmpty()?-1:st.peek();
+14
+15            }
+16            st.push(nums[i%n]);
+17        }
+18        return NGE;
+19    }
+20}
