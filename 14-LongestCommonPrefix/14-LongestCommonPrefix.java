@@ -1,4 +1,4 @@
-// Last updated: 8/2/2026, 10:32:04 PM
+// Last updated: 8/2/2026, 10:35:31 PM
 1class Solution {
 2    public String longestCommonPrefix(String[] v) {
 3        StringBuilder ans = new StringBuilder();
