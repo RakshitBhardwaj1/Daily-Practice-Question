@@ -1,17 +1,16 @@
-// Last updated: 8/6/2026, 4:43:03 PM
+// Last updated: 9/7/2026, 4:43:02 PM
 1class Solution {
 2    public int climbStairs(int n) {
-3        if(n<=2){
-4            return n; 
-5        }
-6        int path1=2;
-7        int path2=1;
-8
-9        for(int i=3;i<=n;i++){
-10            int path3=path1+path2;
-11            path2=path1;
-12            path1=path3;
-13        }
-14        return path1;
-15    }
-16}
+3        if(n==0) return 1;
+4        if(n==1) return 1;
+5
+6        int prev1=1;
+7        int prev2=1;
+8        for(int i=2;i<=n;i++){
+9            int c=prev1+prev2;
+10            prev2=prev1;
+11            prev1=c;
+12        }
+13        return prev1;
+14    }
+15}
