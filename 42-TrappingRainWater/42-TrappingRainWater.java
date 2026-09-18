@@ -1,20 +1,19 @@
-// Last updated: 9/18/2026, 3:48:51 PM
+// Last updated: 9/18/2026, 7:13:58 PM
 1class Solution {
-2    public int maxArea(int[] height) {
-3        int n=height.length;
-4        int l=0;
-5        int r=n-1;
-6        int total=Integer.MIN_VALUE;
-7        while(l<r){
-8            if(height[l]<=height[r]){
-9                total=Math.max(total,(r-l)*height[l]);
-10                l++;
-11            }
-12            else{
-13                total=Math.max(total,(r-l)*height[r]);
-14                r--;
-15            }
-16        }
-17        return total;
-18    }
-19}
+2    public int longestCommonSubsequence(String text1, String text2) {
+3        int n=text1.length();
+4        int m=text2.length();
+5        int[][] dp=new int[n+1][m+1];
+6        for(int i=1;i<=n;i++){
+7            for(int j=1;j<=m;j++){
+8                if(text1.charAt(i-1)==text2.charAt(j-1)){
+9                    dp[i][j]=1+dp[i-1][j-1];
+10                }
+11                else{
+12                    dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
+13                }
+14            }
+15        }
+16        return dp[n][m];
+17    }
+18}
